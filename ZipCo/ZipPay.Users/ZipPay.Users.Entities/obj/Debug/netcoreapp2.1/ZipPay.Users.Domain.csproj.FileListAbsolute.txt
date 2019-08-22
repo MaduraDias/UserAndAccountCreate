@@ -1,0 +1,8 @@
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\bin\Debug\netcoreapp2.1\ZipPay.Users.Domain.deps.json
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\bin\Debug\netcoreapp2.1\ZipPay.Users.Domain.dll
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\obj\Debug\netcoreapp2.1\ZipPay.Users.Domain.csproj.CoreCompileInputs.cache
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\obj\Debug\netcoreapp2.1\ZipPay.Users.Domain.AssemblyInfoInputs.cache
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\obj\Debug\netcoreapp2.1\ZipPay.Users.Domain.AssemblyInfo.cs
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\bin\Debug\netcoreapp2.1\ZipPay.Users.Domain.pdb
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\obj\Debug\netcoreapp2.1\ZipPay.Users.Domain.dll
+C:\Personal\JobTest\ZipCo\ZipPay.Users\ZipPay.Users.Entities\obj\Debug\netcoreapp2.1\ZipPay.Users.Domain.pdb
