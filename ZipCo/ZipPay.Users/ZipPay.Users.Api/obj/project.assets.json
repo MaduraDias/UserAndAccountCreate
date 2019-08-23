@@ -1721,9 +1721,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.2.6",
           "Microsoft.EntityFrameworkCore.Abstractions": "2.2.6",
-          "ZipPay.Users.Domain": "1.0.0"
+          "ZipPay.Users.DataServices": "1.0.0",
+          "ZipPay.Users.Entities": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ZipPay.Users.BusinessService.dll": {}
@@ -1732,7 +1732,21 @@
           "bin/placeholder/ZipPay.Users.BusinessService.dll": {}
         }
       },
-      "ZipPay.Users.Domain/1.0.0": {
+      "ZipPay.Users.DataServices/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.6",
+          "ZipPay.Users.Entities": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ZipPay.Users.DataServices.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ZipPay.Users.DataServices.dll": {}
+        }
+      },
+      "ZipPay.Users.Entities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
@@ -1740,10 +1754,10 @@
           "Microsoft.EntityFrameworkCore.Abstractions": "2.2.6"
         },
         "compile": {
-          "bin/placeholder/ZipPay.Users.Domain.dll": {}
+          "bin/placeholder/ZipPay.Users.Entities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ZipPay.Users.Domain.dll": {}
+          "bin/placeholder/ZipPay.Users.Entities.dll": {}
         }
       }
     }
@@ -5428,10 +5442,15 @@
       "path": "../ZipPay.Users.BusinessService/ZipPay.Users.BusinessService.csproj",
       "msbuildProject": "../ZipPay.Users.BusinessService/ZipPay.Users.BusinessService.csproj"
     },
-    "ZipPay.Users.Domain/1.0.0": {
+    "ZipPay.Users.DataServices/1.0.0": {
       "type": "project",
-      "path": "../ZipPay.Users.Entities/ZipPay.Users.Domain.csproj",
-      "msbuildProject": "../ZipPay.Users.Entities/ZipPay.Users.Domain.csproj"
+      "path": "../ZipPay.Users.DataServices/ZipPay.Users.DataServices.csproj",
+      "msbuildProject": "../ZipPay.Users.DataServices/ZipPay.Users.DataServices.csproj"
+    },
+    "ZipPay.Users.Entities/1.0.0": {
+      "type": "project",
+      "path": "../ZipPay.Users.Entities/ZipPay.Users.Entities.csproj",
+      "msbuildProject": "../ZipPay.Users.Entities/ZipPay.Users.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5444,7 +5463,7 @@
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.7.12",
       "ZipPay.Users.BusinessService >= 1.0.0",
-      "ZipPay.Users.Domain >= 1.0.0"
+      "ZipPay.Users.Entities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5480,8 +5499,8 @@
             "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.BusinessService\\ZipPay.Users.BusinessService.csproj": {
               "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.BusinessService\\ZipPay.Users.BusinessService.csproj"
             },
-            "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj": {
-              "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj"
+            "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj": {
+              "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj"
             }
           }
         }

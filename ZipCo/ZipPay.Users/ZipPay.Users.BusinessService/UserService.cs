@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ZipPay.Users.Domain;
-using ZipPay.Users.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using ZipPay.Users.Entities;
+using ZipPay.Users.DataServices.Repositories;
 
 namespace ZipPay.Users.BusinessService
 {
@@ -17,46 +18,50 @@ namespace ZipPay.Users.BusinessService
 
     public class UserService : IUserService
     {
-        private readonly DefaultDBContext defaultDBContext;
+        private readonly IUserRepository userRepository;
 
-        public UserService(DefaultDBContext defaultDBContext)
+        public UserService(IUserRepository userRepository)
         {
-            this.defaultDBContext = defaultDBContext 
-                ?? throw new ArgumentNullException(nameof(defaultDBContext));
+            this.userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
         public async Task CreateAsync(User user)
         {
-            var isIdExists = await defaultDBContext.User.CountAsync
-                                    (dbUser => dbUser.Id == user.Id).ConfigureAwait(false) > 0;
+            await ValidateBeforeCreate(user)
+                    .ConfigureAwait(false);
+
+            await userRepository
+                    .CreateAsync(user)
+                    .ConfigureAwait(false);
+        }
+
+        private async Task ValidateBeforeCreate(User user)
+        {
+            var isIdExists = await userRepository.IsUserIdExistsAsync(user.Id)
+                                                 .ConfigureAwait(false);
 
             if (isIdExists)
             {
-                throw new ValidationException("Id already exists");
+                throw new ValidationException("User Id already exists");
             }
 
-            var isEmailExists = await defaultDBContext.User.CountAsync
-                                   (dbUser => dbUser.Email == user.Email).ConfigureAwait(false) > 0;
+            var isEmailExists = await userRepository.IsEmailExistsAsync(user.Email)
+                                                    .ConfigureAwait(false);
 
             if (isEmailExists)
             {
                 throw new ValidationException("Email already exists");
             }
-
-            defaultDBContext.User.Add(user);
-            await defaultDBContext.SaveChangesAsync()
-                                   .ConfigureAwait(false);
         }
 
         public Task<List<User>> GetAllAsync()
         {
-            return defaultDBContext.User.ToListAsync();
+            return userRepository.GetAllAsync();
         }
 
         public Task<User> GetByIdAsync(Guid id)
         {
-            return defaultDBContext.User
-                    .FirstOrDefaultAsync(dbUser => dbUser.Id == id);
+            return userRepository.GetByIdAsync(id);
         }
     }
 }

@@ -9,40 +9,19 @@ namespace ZipPay.Users.Api.Models
 
         public UserModel User { get; set; }
 
-        public static explicit operator AccountModel(User user)
+        public static explicit operator AccountModel(Account account)
         {
-            if(user == null)
+            if(account == null)
             {
                 return null;
             }
 
-            return new UserModel()
+            return new AccountModel()
             {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email,
-                MonthlySalary = user.MonthlySalary,
-                MonthlyExpenses = user.MonthlyExpenses
+                Id = account.UserId,
+                User =(UserModel)account.User
             };
         }
-
-        public User ToEntity()
-        {
-            if(this == null)
-            {
-                return null;
-            }
-
-            return new User()
-            {
-                Id = Id,
-                Name = Name,
-                Email = Email,
-                MonthlySalary = MonthlySalary,
-                MonthlyExpenses = MonthlyExpenses
-            };
-        }
-
 
     }
 }

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ZipPay.Users.BusinessService;
+using ZipPay.Users.DataServices.Repositories;
 using ZipPay.Users.Domain;
 
 namespace ZipPay.Users.Api
@@ -58,7 +59,12 @@ namespace ZipPay.Users.Api
         private static void RegisterDependencies(IServiceCollection services)
         {
             services.AddDbContext<DefaultDBContext>(ServiceLifetime.Scoped);
+           
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAccountService, AccountService>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
         }
     }
 }

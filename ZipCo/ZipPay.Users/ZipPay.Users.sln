@@ -5,9 +5,13 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZipPay.Users.Api", "ZipPay.Users.Api\ZipPay.Users.Api.csproj", "{15DC8F2F-A54F-4671-8D42-744288EAF564}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.Domain", "ZipPay.Users.Entities\ZipPay.Users.Domain.csproj", "{53E96F5E-9CDB-4EBF-AE01-FA8F4BEC6564}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.Entities", "ZipPay.Users.Entities\ZipPay.Users.Entities.csproj", "{53E96F5E-9CDB-4EBF-AE01-FA8F4BEC6564}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.BusinessService", "ZipPay.Users.BusinessService\ZipPay.Users.BusinessService.csproj", "{A7D1EA7B-F087-4E90-B422-63B083098E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.DataServices", "ZipPay.Users.DataServices\ZipPay.Users.DataServices.csproj", "{09D99C1D-211D-4CAD-9FCE-68D020673633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.BusinessService.UnitTest", "ZipPay.Users.BusinessService.UnitTest\ZipPay.Users.BusinessService.UnitTest.csproj", "{877E915C-5485-4899-91A6-6E1C11B415B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{A7D1EA7B-F087-4E90-B422-63B083098E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7D1EA7B-F087-4E90-B422-63B083098E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7D1EA7B-F087-4E90-B422-63B083098E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D99C1D-211D-4CAD-9FCE-68D020673633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D99C1D-211D-4CAD-9FCE-68D020673633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D99C1D-211D-4CAD-9FCE-68D020673633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D99C1D-211D-4CAD-9FCE-68D020673633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877E915C-5485-4899-91A6-6E1C11B415B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877E915C-5485-4899-91A6-6E1C11B415B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877E915C-5485-4899-91A6-6E1C11B415B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877E915C-5485-4899-91A6-6E1C11B415B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

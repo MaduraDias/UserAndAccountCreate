@@ -5,11 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="2.2.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ZipPay.Users.DataServices\ZipPay.Users.DataServices.csproj" />
     <ProjectReference Include="..\ZipPay.Users.Entities\ZipPay.Users.Entities.csproj" />
   </ItemGroup>
 

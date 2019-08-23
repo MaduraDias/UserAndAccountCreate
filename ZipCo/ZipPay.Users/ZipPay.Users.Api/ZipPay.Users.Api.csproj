@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ZipPay.Users.BusinessService\ZipPay.Users.BusinessService.csproj" />
-    <ProjectReference Include="..\ZipPay.Users.Entities\ZipPay.Users.Domain.csproj" />
+    <ProjectReference Include="..\ZipPay.Users.Entities\ZipPay.Users.Entities.csproj" />
   </ItemGroup>
 
 </Project>

@@ -33,8 +33,8 @@
               "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.BusinessService\\ZipPay.Users.BusinessService.csproj": {
                 "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.BusinessService\\ZipPay.Users.BusinessService.csproj"
               },
-              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj": {
-                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj"
+              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj": {
+                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj"
               }
             }
           }
@@ -113,8 +113,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj": {
-                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj"
+              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\ZipPay.Users.DataServices.csproj": {
+                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\ZipPay.Users.DataServices.csproj"
+              },
+              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj": {
+                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj"
               }
             }
           }
@@ -128,10 +131,6 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[2.2.6, )"
-            },
             "Microsoft.EntityFrameworkCore.Abstractions": {
               "target": "Package",
               "version": "[2.2.6, )"
@@ -151,12 +150,72 @@
         }
       }
     },
-    "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj": {
+    "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\ZipPay.Users.DataServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj",
-        "projectName": "ZipPay.Users.Domain",
-        "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Domain.csproj",
+        "projectUniqueName": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\ZipPay.Users.DataServices.csproj",
+        "projectName": "ZipPay.Users.DataServices",
+        "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\ZipPay.Users.DataServices.csproj",
+        "packagesPath": "C:\\Users\\diasm\\.nuget\\packages\\",
+        "outputPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.DataServices\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\diasm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj": {
+                "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj",
+        "projectName": "ZipPay.Users.Entities",
+        "projectPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\ZipPay.Users.Entities.csproj",
         "packagesPath": "C:\\Users\\diasm\\.nuget\\packages\\",
         "outputPath": "C:\\Personal\\JobTest\\ZipCo\\ZipPay.Users\\ZipPay.Users.Entities\\obj\\",
         "projectStyle": "PackageReference",

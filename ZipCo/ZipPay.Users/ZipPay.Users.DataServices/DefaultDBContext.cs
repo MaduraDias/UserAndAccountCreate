@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ZipPay.Users.Entities;
 
-namespace ZipPay.Users.Domain
+namespace ZipPay.Users.DataService
 {
     public class DefaultDBContext : DbContext
     {

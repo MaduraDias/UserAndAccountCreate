@@ -1,13 +1,30 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
 
-/ZipCo/.vs/JobTest/v16/.suo
-/ZipCo/.vs/VSWorkspaceState.json
-/ZipCo/.vs/slnx.sqlite
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/Server/sqlite3/storage.ide-wal
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/Server/sqlite3/storage.ide-shm
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/Server/sqlite3/storage.ide
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/Server/sqlite3/db.lock
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/Server/sqlite3
-/ZipCo/ZipPay.Users/.vs/ZipPay.Users/v16/.suo
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+msbuild.log
+msbuild.err
+msbuild.wrn
+bin
+obj
+
+.vs/
