@@ -17,7 +17,7 @@ Note : After change the connection string you can run all the tests including Un
 
 ## Run the Application on Visual Studio with Docker-Compose
 
-1. Make sure the docker-compose project is the Start Up project
+1. Make sure to set the docker-compose project as the Start Up project.
 2. Use the following connection string in the appSettings.Development.json file in the ZipPay.Users.Api project.
 
 ```
