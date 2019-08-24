@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAnnotationsExtensions;
+using System;
 using System.ComponentModel.DataAnnotations;
 using ZipPay.Users.Entities;
 
@@ -15,8 +16,10 @@ namespace ZipPay.Users.Api.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        [Min(0,ErrorMessage ="Salary should be a positive value")]
         public decimal MonthlySalary { get; set; }
 
+        [Min(0, ErrorMessage = "Monthly Expenses should be a positive value")]
         public decimal MonthlyExpenses { get; set; }
 
         public static explicit operator UserModel(User user)

@@ -20,5 +20,12 @@ namespace ZipPay.Users.DataService
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFProviders.InMemory;Trusted_Connection=True;ConnectRetryCount=0");
             }
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>()
+                .HasAlternateKey(user => user.Email)
+                .HasName("UniqueIndex_UserEmail");
+        }
     }
 }

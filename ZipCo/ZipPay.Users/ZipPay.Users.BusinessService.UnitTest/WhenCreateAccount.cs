@@ -38,7 +38,7 @@ namespace ZipPay.Users.BusinessService.UnitTest
             userRepositoryMock = new Mock<IUserRepository>();
            
             accountRepositoryMock = new Mock<IAccountRepository>();
-            accountRepositoryMock.Setup(repo => repo.CreateAsync(mockUserWithEnoughIncome));
+            accountRepositoryMock.Setup(repo => repo.CreateAsync(mockUserWithEnoughIncome.Id));
             accountService = new AccountService(accountRepositoryMock.Object,userRepositoryMock.Object);
         }
 
@@ -52,7 +52,7 @@ namespace ZipPay.Users.BusinessService.UnitTest
                                 .ReturnsAsync(true);
 
             var exception = Assert.ThrowsAsync<BusinessValidationException>
-                                (async () => await accountService.CreateAsync(mockUserWithEnoughIncome));
+                                (async () => await accountService.CreateAsync(mockUserWithEnoughIncome.Id));
 
             Assert.That(exception.Message, Is.EqualTo("Account already exists for the user"));
 
@@ -70,7 +70,7 @@ namespace ZipPay.Users.BusinessService.UnitTest
                               .ReturnsAsync(false);
 
             var exception = Assert.ThrowsAsync<BusinessValidationException>
-                                (async () => await accountService.CreateAsync(mockUserWithEnoughIncome));
+                                (async () => await accountService.CreateAsync(mockUserWithEnoughIncome.Id));
 
             Assert.That(exception.Message, Is.EqualTo("User not found"));
 
@@ -87,8 +87,11 @@ namespace ZipPay.Users.BusinessService.UnitTest
             userRepositoryMock.Setup(repo => repo.IsUserIdExistsAsync(It.IsAny<Guid>()))
                               .ReturnsAsync(true);
 
+            userRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>()))
+                            .ReturnsAsync(mockUserWithoutEnoughIncome);
+
             var exception = Assert.ThrowsAsync<BusinessValidationException>
-                                (async () => await accountService.CreateAsync(mockUserWithoutEnoughIncome));
+                                (async () => await accountService.CreateAsync(mockUserWithoutEnoughIncome.Id));
 
             Assert.That(exception.Message, Is.EqualTo("Monthly Salary - Monthly Expenses less than 1000"));
 
@@ -98,16 +101,19 @@ namespace ZipPay.Users.BusinessService.UnitTest
         [Test]
         public async Task ShouldCreateGivenNoValidationErrors()
         {
-
+         
             accountRepositoryMock.Setup(repo => repo.IsAccountExists(It.IsAny<Guid>()))
                                 .ReturnsAsync(false);
 
             userRepositoryMock.Setup(repo => repo.IsUserIdExistsAsync(It.IsAny<Guid>()))
                               .ReturnsAsync(true);
 
-            await accountService.CreateAsync(mockUserWithEnoughIncome);
+            userRepositoryMock.Setup(repo => repo.GetByIdAsync(It.IsAny<Guid>()))
+                              .ReturnsAsync(mockUserWithEnoughIncome);
 
-            accountRepositoryMock.Verify(repo => repo.CreateAsync(mockUserWithEnoughIncome), Times.Once);
+            await accountService.CreateAsync(mockUserWithEnoughIncome.Id);
+
+            accountRepositoryMock.Verify(repo => repo.CreateAsync(mockUserWithEnoughIncome.Id), Times.Once);
         }
 
     }

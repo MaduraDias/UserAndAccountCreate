@@ -23,7 +23,7 @@ namespace Tests
                  MonthlyExpenses = 5000
              };
 
-           StringContent httpContent = TestHelper.CreateHttpContentFromUserModel(userModel);
+           StringContent httpContent = TestHelper.CreateHttpContentFromModel(userModel);
 
             //Create User
             var createResult = await client.PostAsync(ApiUrl.UserApiUrl, httpContent);
@@ -54,7 +54,7 @@ namespace Tests
                 MonthlyExpenses = 5000
             };
 
-            StringContent httpContentForFirstTry = TestHelper.CreateHttpContentFromUserModel(userModel);
+            StringContent httpContentForFirstTry = TestHelper.CreateHttpContentFromModel(userModel);
 
             var createResponseForFirstTry = await client.PostAsync(ApiUrl.UserApiUrl, httpContentForFirstTry);
             Assert.AreEqual(HttpStatusCode.Created, createResponseForFirstTry.StatusCode, "Failed at create");
@@ -68,7 +68,7 @@ namespace Tests
                 MonthlyExpenses = 5000
             };
 
-            StringContent httpContentForSecondTry = TestHelper.CreateHttpContentFromUserModel(secondUser);
+            StringContent httpContentForSecondTry = TestHelper.CreateHttpContentFromModel(secondUser);
             var createResponseForSecondTry = await client.PostAsync(ApiUrl.UserApiUrl, httpContentForSecondTry);
 
             Assert.AreEqual(HttpStatusCode.BadRequest,createResponseForSecondTry.StatusCode, "Invalid Http Status Code");

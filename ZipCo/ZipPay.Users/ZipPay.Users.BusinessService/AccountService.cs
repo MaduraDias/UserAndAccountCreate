@@ -9,7 +9,7 @@ namespace ZipPay.Users.BusinessService
 {
     public interface IAccountService
     {
-        Task CreateAsync(User user);
+        Task CreateAsync(Guid userId);
         Task<List<Account>> GetAllAsync();
     }
 
@@ -24,15 +24,15 @@ namespace ZipPay.Users.BusinessService
             this.userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
         }
 
-        public async Task CreateAsync(User user)
+        public async Task CreateAsync(Guid userId)
         {
-            await ValidateBeforeCreate(user).ConfigureAwait(false);
-            await accountRepository.CreateAsync(user).ConfigureAwait(false);
+            await ValidateBeforeCreate(userId).ConfigureAwait(false);
+            await accountRepository.CreateAsync(userId).ConfigureAwait(false);
         }
 
-        private async Task ValidateBeforeCreate(User user)
+        private async Task ValidateBeforeCreate(Guid userId)
         {
-            var isUserExists = await userRepository.IsUserIdExistsAsync(user.Id)
+            var isUserExists = await userRepository.IsUserIdExistsAsync(userId)
                                                  .ConfigureAwait(false);
 
             if (!isUserExists)
@@ -40,13 +40,15 @@ namespace ZipPay.Users.BusinessService
                 throw new BusinessValidationException("User not found");
             }
 
-            var isAccountExists = await accountRepository.IsAccountExists(user.Id)
+            var isAccountExists = await accountRepository.IsAccountExists(userId)
                                                        .ConfigureAwait(false);
 
             if (isAccountExists)
             {
                 throw new BusinessValidationException("Account already exists for the user");
             }
+
+            var user = await userRepository.GetByIdAsync(userId);
 
             //Can be configured in DB
             var creditValue = 1000;

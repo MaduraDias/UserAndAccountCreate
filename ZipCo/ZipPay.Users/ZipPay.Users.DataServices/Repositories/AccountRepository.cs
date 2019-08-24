@@ -9,7 +9,7 @@ namespace ZipPay.Users.DataServices.Repositories
 {
     public interface IAccountRepository
     {
-        Task CreateAsync(User user);
+        Task CreateAsync(Guid userId);
         Task<List<Account>> GetAllAsync();
         Task<bool> IsAccountExists(Guid userId);
     }
@@ -23,11 +23,11 @@ namespace ZipPay.Users.DataServices.Repositories
                 ?? throw new ArgumentNullException(nameof(defaultDbContext));
         }
 
-        public Task CreateAsync(User user)
+        public Task CreateAsync(Guid userId)
         {
             defaultDbContext.Account.Add(new Account()
             {
-                UserId = user.Id
+                UserId = userId
             }
           );
 

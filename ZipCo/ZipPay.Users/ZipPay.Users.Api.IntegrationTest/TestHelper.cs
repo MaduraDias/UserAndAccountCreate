@@ -11,9 +11,9 @@ namespace ZipPay.Users.Api.IntegrationTest
 {
     public static class TestHelper
     {
-        public static StringContent CreateHttpContentFromUserModel(UserModel userModel)
+        public static StringContent CreateHttpContentFromModel<T>(T model)
         {
-            var user = JsonConvert.SerializeObject(userModel);
+            var user = JsonConvert.SerializeObject(model);
             var httpContent = new StringContent(user, System.Text.Encoding.UTF8, "application/json");
             return httpContent;
         }

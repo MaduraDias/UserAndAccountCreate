@@ -28,7 +28,12 @@ namespace Tests
             await CreateUser(userModel);
 
             //Create Account
-            StringContent httpContent = TestHelper.CreateHttpContentFromUserModel(userModel);
+            StringContent httpContent = TestHelper.CreateHttpContentFromModel
+                                            (new AccountCreateRequestModel()
+                                            {
+                                                UserId = userModel.Id
+                                            });
+
             var accountCreateResponse = await client.PostAsync(ApiUrl.AccountApiUrl, httpContent);
 
             Assert.AreEqual(HttpStatusCode.Created, accountCreateResponse.StatusCode, "Account creation Failed");
@@ -69,7 +74,12 @@ namespace Tests
             await CreateUser(userModel);
 
             //Try creating Account
-            StringContent httpContent = TestHelper.CreateHttpContentFromUserModel(userModel);
+            StringContent httpContent = TestHelper.CreateHttpContentFromModel
+                                                    (new AccountCreateRequestModel()
+                                                    {
+                                                        UserId = userModel.Id
+                                                    });
+
             var accountCreateResponse = await client.PostAsync(ApiUrl.AccountApiUrl, httpContent);
 
             Assert.AreEqual(HttpStatusCode.BadRequest, accountCreateResponse.StatusCode, "Invalid Http Status Code");
@@ -83,7 +93,7 @@ namespace Tests
 
         private async Task CreateUser(UserModel userModel)
         {
-            StringContent httpContent = TestHelper.CreateHttpContentFromUserModel(userModel);
+            StringContent httpContent = TestHelper.CreateHttpContentFromModel(userModel);
             await client.PostAsync(ApiUrl.UserApiUrl, httpContent);
         }
 

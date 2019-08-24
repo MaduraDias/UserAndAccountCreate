@@ -27,7 +27,7 @@ namespace ZipPay.Users.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserModel>> GetById(Guid id)
+        public async Task<ActionResult<UserModel>> GetById([FromRoute]Guid id)
         {
             var user = await userService.GetByIdAsync(id);
             return Ok((UserModel)user);

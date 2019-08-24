@@ -28,9 +28,9 @@ namespace ZipPay.Users.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create([FromBody] UserModel user)
+        public async Task<ActionResult> Create([FromBody]AccountCreateRequestModel accountCreateRequestModel)
         {
-            await accountService.CreateAsync(user.ToEntity());
+            await accountService.CreateAsync(accountCreateRequestModel.UserId);
             return Created(string.Empty, null);
         }
     }
