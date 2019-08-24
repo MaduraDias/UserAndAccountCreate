@@ -12,7 +12,7 @@ namespace Tests
     public class WhenCreateUser:BaseApiIntegrationTest
     {
         [Test]
-        public async Task ShouldSaveAndPersistGivenNoValidationErrors()
+        public async Task ShouldSaveAndAbleToGetBackGivenNoValidationErrors()
         {
              var userModel = new UserModel()
              {

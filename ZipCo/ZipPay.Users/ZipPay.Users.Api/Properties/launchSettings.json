@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/users",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -20,7 +20,7 @@
     "ZipPay.Users.Api": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "api/values",
+      "launchUrl": "api/users",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -29,7 +29,7 @@
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
-      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/users",
       "environmentVariables": {
         "ASPNETCORE_URLS": "https://+:443;http://+:80",
         "ASPNETCORE_HTTPS_PORT": "44371"
@@ -37,6 +37,10 @@
       "httpPort": 50332,
       "useSSL": true,
       "sslPort": 44371
+    },
+    "Azure Dev Spaces": {
+      "commandName": "AzureDevSpaces",
+      "launchBrowser": true
     }
   }
 }

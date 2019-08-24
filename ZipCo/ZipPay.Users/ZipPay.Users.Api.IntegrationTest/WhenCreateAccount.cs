@@ -55,7 +55,7 @@ namespace Tests
 
 
         [Test]
-        public async Task ShouldReturnBadRequestWithValidErrorMessageGivenUserFinancialSituationNotSatisfied()
+        public async Task ShouldReturnBadRequestWithValidErrorMessageGivenUserMonthlySavingLessThanThousand()
         {
             var userModel = new UserModel()
             {
