@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ZipPay.Users.Domain;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using ZipPay.Users.Entities;
 using ZipPay.Users.DataServices.Repositories;
+using ZipPay.Users.BusinessService.Exceptions;
 
 namespace ZipPay.Users.BusinessService
 {
@@ -42,7 +40,7 @@ namespace ZipPay.Users.BusinessService
 
             if (isIdExists)
             {
-                throw new ValidationException("User Id already exists");
+                throw new BusinessValidationException("User Id already exists");
             }
 
             var isEmailExists = await userRepository.IsEmailExistsAsync(user.Email)
@@ -50,7 +48,7 @@ namespace ZipPay.Users.BusinessService
 
             if (isEmailExists)
             {
-                throw new ValidationException("Email already exists");
+                throw new BusinessValidationException("Email already exists");
             }
         }
 

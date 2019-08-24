@@ -10,17 +10,17 @@ namespace ZipPay.Users.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountsController : ControllerBase
     {
         private readonly IAccountService accountService;
 
-        public AccountController(IAccountService accountService) 
+        public AccountsController(IAccountService accountService) 
             => this.accountService = accountService
                ?? throw new ArgumentNullException(nameof(accountService));
 
       
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AccountModel>>> GetAll()
+        public async Task<ActionResult<List<AccountModel>>> GetAll()
         {
             var accountList = await accountService.GetAllAsync();
             var accountModelList = accountList.Select(account => (AccountModel)account);

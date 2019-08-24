@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ZipPay.Users.Domain;
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
 using ZipPay.Users.Entities;
 using ZipPay.Users.DataServices.Repositories;
+using ZipPay.Users.BusinessService.Exceptions;
 
 namespace ZipPay.Users.BusinessService
 {
@@ -39,7 +37,7 @@ namespace ZipPay.Users.BusinessService
 
             if (!isUserExists)
             {
-                throw new ValidationException("User not found");
+                throw new BusinessValidationException("User not found");
             }
 
             var isAccountExists = await accountRepository.IsAccountExists(user.Id)
@@ -47,7 +45,7 @@ namespace ZipPay.Users.BusinessService
 
             if (isAccountExists)
             {
-                throw new ValidationException("Account already exists for the user");
+                throw new BusinessValidationException("Account already exists for the user");
             }
 
             //Can be configured in DB
@@ -55,7 +53,7 @@ namespace ZipPay.Users.BusinessService
 
             if (user.MonthlySalary - user.MonthlyExpenses < creditValue)
             {
-                throw new ValidationException($"Monthly Salary - Monthly Expenses less than {creditValue}");
+                throw new BusinessValidationException($"Monthly Salary - Monthly Expenses less than {creditValue}");
             }
         }
 

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using ZipPay.Users.DataService;
 using ZipPay.Users.Entities;
@@ -37,7 +36,10 @@ namespace ZipPay.Users.DataServices.Repositories
 
         public Task<List<Account>> GetAllAsync()
         {
-            return defaultDbContext.Account.ToListAsync();
+            return defaultDbContext
+                .Account
+                .Include(acc => acc.User)
+                .ToListAsync();
         }
 
         public async Task<bool> IsAccountExists(Guid userId)

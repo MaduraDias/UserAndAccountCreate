@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.DataServices",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.BusinessService.UnitTest", "ZipPay.Users.BusinessService.UnitTest\ZipPay.Users.BusinessService.UnitTest.csproj", "{877E915C-5485-4899-91A6-6E1C11B415B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipPay.Users.Api.IntegrationTest", "ZipPay.Users.Api.IntegrationTest\ZipPay.Users.Api.IntegrationTest.csproj", "{1CB7AD55-C9ED-4E4A-AA75-579470599903}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{877E915C-5485-4899-91A6-6E1C11B415B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{877E915C-5485-4899-91A6-6E1C11B415B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{877E915C-5485-4899-91A6-6E1C11B415B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB7AD55-C9ED-4E4A-AA75-579470599903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB7AD55-C9ED-4E4A-AA75-579470599903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB7AD55-C9ED-4E4A-AA75-579470599903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB7AD55-C9ED-4E4A-AA75-579470599903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -19,7 +19,7 @@ namespace ZipPay.Users.Api.Controllers
                ?? throw new ArgumentNullException(nameof(userService));
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserModel>>> GetAll()
+        public async Task<ActionResult<List<UserModel>>> GetAll()
         {
             var userList = await userService.GetAllAsync();
             var userModelList = userList.Select(user => (UserModel)user);
@@ -37,7 +37,7 @@ namespace ZipPay.Users.Api.Controllers
         public async Task<ActionResult> Create([FromBody] UserModel user)
         {
             await userService.CreateAsync(user.ToEntity());
-            return CreatedAtAction(nameof(GetById), new { user.Id });
+            return CreatedAtAction(nameof(GetById), new {id=user.Id},user);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using ZipPay.Users.DataService;
 using ZipPay.Users.Entities;

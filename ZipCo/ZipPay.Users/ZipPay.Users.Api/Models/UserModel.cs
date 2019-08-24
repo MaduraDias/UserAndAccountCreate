@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using ZipPay.Users.Entities;
 
 namespace ZipPay.Users.Api.Models
@@ -7,8 +8,11 @@ namespace ZipPay.Users.Api.Models
     {
         public Guid Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
         public decimal MonthlySalary { get; set; }
