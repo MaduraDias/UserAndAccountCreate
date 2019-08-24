@@ -24,5 +24,5 @@ Note : After change the connection string you can run all the tests including Un
 "DefaultDBContext": "Server=sql.data;Database=ZapUser;User=sa;Password=testUser@12345;"
 ```
 3. Run the application.
-4. You can use Postman to test the Api
+4. You will see the Swagger UI.
 
