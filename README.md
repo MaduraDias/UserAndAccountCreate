@@ -1,4 +1,3 @@
-# ZipCo Test
 
 ## Prerequisites to Run the code locally
 1. Visual Studio 2019
