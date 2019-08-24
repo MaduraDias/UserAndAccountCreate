@@ -1,6 +1,6 @@
 # ZipCo Test
 
-## prerequisite to Run the code locally
+## Prerequisites to Run the code locally
 1. Visual Studio 2019
 2. Docker 19.03.1 and make sure to switch to Linux Containers
 
